@@ -6,57 +6,10 @@
     <description>Recent content in Posts on LeetCode 4 Geeks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en_US</language>
-    <lastBuildDate>Tue, 29 Jan 2019 09:19:11 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Dec 2018 22:38:14 +0800</lastBuildDate>
     
 	<atom:link href="https://meoscar.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Leetcode7_Easy</title>
-      <link>https://meoscar.github.io/leetcode7_easy/</link>
-      <pubDate>Tue, 29 Jan 2019 09:19:11 +0800</pubDate>
-      
-      <guid>https://meoscar.github.io/leetcode7_easy/</guid>
-      <description>7. Reverse Integer
-Given a 32-bit signed integer, reverse digits of an integer.
-Example 1:
-Input: 123 Output: 321  Example 2:
-Input: -123 Output: -321  Example 3:
-Input: 120 Output: 21  Note:
-Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [&amp;minus;231,&amp;nbsp; 231&amp;nbsp;&amp;minus; 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</description>
-    </item>
-    
-    <item>
-      <title>Leetcode6_Medium</title>
-      <link>https://meoscar.github.io/leetcode6_medium/</link>
-      <pubDate>Tue, 29 Jan 2019 08:58:12 +0800</pubDate>
-      
-      <guid>https://meoscar.github.io/leetcode6_medium/</guid>
-      <description>6. ZigZag Conversion
-&amp;nbsp;  The string&amp;nbsp;&#34;PAYPALISHIRING&#34;&amp;nbsp;is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-P A H N A P L S I I G Y I R  And then read line by line:&amp;nbsp;&#34;PAHNAPLSIIGYIR&#34;
-Write the code that will take a string and make this conversion given a number of rows:</description>
-    </item>
-    
-    <item>
-      <title>Leetcode5_Medium</title>
-      <link>https://meoscar.github.io/leetcode5_medium/</link>
-      <pubDate>Tue, 29 Jan 2019 00:44:17 +0800</pubDate>
-      
-      <guid>https://meoscar.github.io/leetcode5_medium/</guid>
-      <description>5.&amp;nbsp;Longest Palindromic Substring
-&amp;nbsp;
-Given a string&amp;nbsp;s, find the longest palindromic substring in&amp;nbsp;s. You may assume that the maximum length of&amp;nbsp;s&amp;nbsp;is 1000.
-Example 1:
-Input: &#34;babad&#34; Output: &#34;bab&#34; Note: &#34;aba&#34; is also a valid answer.  Example 2:
-Input: &#34;cbbd&#34; Output: &#34;bb&#34; &amp;nbsp;
-
-public class leetcode5_longestPalindrome {
-public static int max = Integer.MIN_VALUE;
-public static String res = &#34;&#34;;
-public String longestPalindrome(String s){
-if(s.length() == 0 || s == null) {</description>
-    </item>
     
     <item>
       <title>Leetcode4_Hard</title>
