@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Leetcode2_Medium"/>
+<meta name="twitter:title" content="Leetcode6_Medium"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Leetcode2_Medium &middot; LeetCode 4 Geeks" />
+  	<meta property="og:title" content="Leetcode6_Medium &middot; LeetCode 4 Geeks" />
   	<meta property="og:site_name" content="LeetCode 4 Geeks" />
-  	<meta property="og:url" content="https://meoscar.github.io/leetcode2_medium/" />
+  	<meta property="og:url" content="https://meoscar.github.io/leetcode6_medium/" />
 
     
         
@@ -31,15 +31,16 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-12-12T22:37:51&#43;08:00" />
+    <meta property="article:published_time" content="2019-01-29T08:58:12&#43;08:00" />
 
     
     
 
-    <title>Leetcode2_Medium &middot; LeetCode 4 Geeks</title>
+    <title>Leetcode6_Medium &middot; LeetCode 4 Geeks</title>
 
     
-    <meta name="description" content="2. Add Two Numbers You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain " />
+    <meta name="description" content="6. ZigZag Conversion
+&amp;nbsp;  The string&amp;nbsp;&#34;PAYPALISHIRING&#34;&amp;nbsp;is written in a zigzag pattern on a given number of rows like this: (you may want to display " />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -63,7 +64,7 @@
     
     <meta name="generator" content="Hugo 0.52" />
 
-    <link rel="canonical" href="https://meoscar.github.io/leetcode2_medium/" />
+    <link rel="canonical" href="https://meoscar.github.io/leetcode6_medium/" />
 
     
       
@@ -100,23 +101,23 @@
             
         ]
     },
-    "headline": Leetcode2_Medium,
-    "name": Leetcode2_Medium,
-    "wordCount": 280,
+    "headline": Leetcode6_Medium,
+    "name": Leetcode6_Medium,
+    "wordCount": 241,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://meoscar.github.io/leetcode2_medium/,
-    "datePublished": 2018-12-12T22:37Z,
-    "dateModified": 2018-12-12T22:37Z,
+    "url": https://meoscar.github.io/leetcode6_medium/,
+    "datePublished": 2019-01-29T08:58Z,
+    "dateModified": 2019-01-29T08:58Z,
     
     
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://meoscar.github.io/leetcode2_medium/
+        "@id": https://meoscar.github.io/leetcode6_medium/
     }
 }
     </script>
@@ -187,13 +188,13 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Leetcode2_Medium</h1>
+        <h1 class="post-title">Leetcode6_Medium</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2018-12-12T22:37:51&#43;08:00">
-            Dec 12, 2018
+          <time class="post-date" datetime="2019-01-29T08:58:12&#43;08:00">
+            Jan 29, 2019
           </time>
         
          
@@ -201,23 +202,45 @@
     </header>
 
     <section class="post-content">
-      <h1 id="2-add-two-numbers">2. Add Two Numbers</h1>
-<p class="comments-section">You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-Output: 7 -&gt; 0 -&gt; 8
-</code></pre>
-<pre><code class="lang-java"><span class="hljs-comment">/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */</span></code></pre>
-<pre><br />/**<br /> * Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br /> * Output: 7 -&gt; 0 -&gt; 8<br /> * Explanation: 342 + 465 = 807.<br /> */<br /><br />public class leetcode2_addTwoNumbers {<br />    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {<br />        ListNode dummy = new ListNode(0);<br />        ListNode p1 = l1, p2 = l2;<br />        ListNode cur = dummy;<br />        int res = 0;<br />        //int temp = 0;<br /><br />        while ((p1 != null) || (p2 != null)){<br />            if (p1 != null) {<br />                res = res + p1.val;<br />                p1 = p1.next;<br />            }<br />            if (p2 != null) {<br />                res = res + p2.val;<br />                p2 = p2.next;<br />            }<br /><br />            cur.next = new ListNode(res % 10);<br />            //cur.val = res % 10;<br />            res = res / 10;<br />            cur = cur.next;<br />        }<br /><br />        if(res != 0) {<br />            cur.next = new ListNode(res);<br />        }<br />        return dummy.next;<br />    }<br /><br />    public static void main(String[] args ){<br />        leetcode2_addTwoNumbers l = new leetcode2_addTwoNumbers();<br />        ListNode input1 = new ListNode(2);<br />        input1.next = new ListNode(4);<br />        input1.next.next = new ListNode(3);<br /><br />        ListNode input2 = new ListNode(5);<br />        input2.next = new ListNode(6);<br />        input2.next.next = new ListNode(4);<br /><br />        ListNode res = new ListNode(0);<br />        res = l.addTwoNumbers(input1, input2);<br /><br />        while (res != null) {<br />            System.out.print(res.val + "\n");<br />            res = res.next;<br />        }<br /><br />    }<br />}</pre>
-<pre><code class="lang-java">&nbsp;</code></pre>
-<pre><code class="lang-java"></code></pre>
-<pre><code class="lang-java"></code></pre>
+      <!-- #######  YAY, I AM THE SOURCE EDITOR! #########-->
+<p class="p2"><strong>6. ZigZag Conversion</strong></p>
+<div class="css-101rr4k">&nbsp;</div>
+<div class="content__eAC7">
+<div>
+<p>The string&nbsp;<code>"PAYPALISHIRING"</code>&nbsp;is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<pre>P   A   H   N
+A P L S I I G
+Y   I   R
+</pre>
+<p>And then read line by line:&nbsp;<code>"PAHNAPLSIIGYIR"</code></p>
+<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+<pre>string convert(string s, int numRows);</pre>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "PAYPALISHIRING", numRows = 3
+<strong>Output:</strong> "PAHNAPLSIIGYIR"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "PAYPALISHIRING", numRows =&nbsp;4
+<strong>Output:</strong>&nbsp;"PINALSIGYAHRPI"
+<strong>Explanation:</strong>
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I</pre>
+</div>
+</div>
+<div>
+<div class="css-12aggky">
+<div class="css-oqu510">&nbsp;</div>
+<div class="css-oqu510">&nbsp;</div>
+<div class="css-oqu510">
+<pre><br />public class leetcode6_zigzagconvert {<br />        public String convert(String s, int numRows) {<br />            String[] res = new String[numRows];<br />            for (int i = 0; i &lt; numRows; i++) {<br />                res[i] = "";<br />            }<br /><br />            int row = 0;<br />            boolean reverse = false;<br /><br />            if(numRows == 1)   return s;//special case<br /><br />            for (int i = 0; i &lt; s.length(); i++) {<br />                if(row == numRows - 1) {<br />                    reverse = true;//go backward<br />                }<br />                if(row == 0) {<br />                    reverse = false;//go foreword<br />                }<br /><br />                res[row] = res[row] + (s.charAt(i));<br /><br />                if (reverse) {<br />                    row--;<br />                } else {<br />                    row++;<br />                }<br />            }<br /><br />            StringBuilder sb = new StringBuilder();<br />            for (int j = 0; j &lt; numRows; j++) {<br />                sb.append(res[j]);<br />            }<br />            return sb.toString();<br />        }<br /><br />        public static void main(String[] args){<br />            leetcode6_zigzagconvert z = new leetcode6_zigzagconvert();<br />            String res = z.convert("abcdefghij", 3);<br />            System.out.print(res);<br /><br />        }<br />}</pre>
+</div>
+</div>
+</div>
+<p class="p3">&nbsp;</p>
+<pre>&nbsp;</pre>
 
     </section>
 
@@ -233,19 +256,19 @@ Output: 7 -&gt; 0 -&gt; 8
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Leetcode2_Medium&nbsp;-&nbsp;LeetCode%204%20Geeks&amp;url=https%3a%2f%2fmeoscar.github.io%2fleetcode2_medium%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Leetcode6_Medium&nbsp;-&nbsp;LeetCode%204%20Geeks&amp;url=https%3a%2f%2fmeoscar.github.io%2fleetcode6_medium%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmeoscar.github.io%2fleetcode2_medium%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmeoscar.github.io%2fleetcode6_medium%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmeoscar.github.io%2fleetcode2_medium%2f&amp;description=Leetcode2_Medium"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmeoscar.github.io%2fleetcode6_medium%2f&amp;description=Leetcode6_Medium"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmeoscar.github.io%2fleetcode2_medium%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmeoscar.github.io%2fleetcode6_medium%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -269,17 +292,17 @@ Output: 7 -&gt; 0 -&gt; 8
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://meoscar.github.io/leetcode3_medium/">
+      <a class="read-next-story" style="no-cover" href="https://meoscar.github.io/leetcode7_easy/">
           <section class="post">
-              <h2>Leetcode3_Medium</h2>
+              <h2>Leetcode7_Easy</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="https://meoscar.github.io/leetcode1_easy/">
+      <a class="read-next-story prev" style="no-cover" href="https://meoscar.github.io/leetcode5_medium/">
           <section class="post">
-              <h2>Leetcode1_Easy</h2>
+              <h2>Leetcode5_Medium</h2>
           </section>
       </a>
   
